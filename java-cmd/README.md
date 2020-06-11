@@ -2,7 +2,13 @@
 
 Example template for command line application that may be packaged in a docker image.
 
-# Deploy
+## Code Coverage
+
+```bash
+mvn jacoco:prepare-agent install jacoco:report
+```
+
+## Deploy
 
 Docker image:
 
@@ -17,13 +23,14 @@ docker run --rm \
   archetypal/example:v0.0.1 World!
 ```
 
-# Run Local
+## Run Local
 
 ```bash
-java -jar target/git-api-jar-with-dependencies.jar https://github.com/dockcmd/aws-sh
+java -jar target/example-jar-with-dependencies.jar -h
 ```
 
-# Test
+
+## Test
 
 ```bash
 curl http://localhost:8787/v1/aws-sh/README.md
